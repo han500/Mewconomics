@@ -1,8 +1,0 @@
-@import url('base_essay.css');
-
-@media screen and (min-width: 768px) {
-    article p:nth-of-type(6) {
-        position: relative;
-        right: 5rem;
-    }
-}
