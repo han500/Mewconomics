@@ -1,0 +1,11 @@
+@import url("chapter1.54408dbfae8d.css");
+
+article h4:nth-of-type(2) {
+    right: 7rem;
+}
+
+@media screen and (min-width: 768px) {
+	article h4:nth-of-type(2) {
+		right: 11.5rem;
+	}
+}

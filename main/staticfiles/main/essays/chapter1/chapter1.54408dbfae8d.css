@@ -1,0 +1,11 @@
+@import url("../chapter2/base_essay.12df1c849d75.css");
+
+article h4:nth-of-type(2) {
+	right: 7.5rem;
+}
+
+@media screen and (min-width: 768px) {
+	article h4:nth-of-type(2) {
+		right: 12.5rem;
+	}
+}
