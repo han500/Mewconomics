@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Price Elasticity of Supply</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter2/base_essay.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Price Elasticity of Supply</h2>
+
+            <h3>Unit 2.3 in Chapter 2: The price system and the microeconomy</h3>
+
+            <div class="question-background">
+                <p>
+                    EXPLAIN TWO FACTORS THAT DETERMINE THE PRICE ELASTICITY SUPPLY OF A MANUFACTURED PRODUCT.
+                </p>
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 1, MAY / JUNE, 2022, QUESTION 3A, 8 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter2/2.3.m4a' %}"></audio>
+
+            <h4>Model Answer written by Choo Pei Qi:</h4>
+
+            <h5>AO1 (2 MARKS)</h5>
+
+            <p>
+                Price elasticity of supply (PES) is a measure of a firm's responsiveness to a change in
+                quantity supplied to a change in price. PES can be elastic (magnitude greater than 1) or
+                inelastic (magnitude less than 1). It is the ratio of the percentage change in quantity
+                supplied (QS) to the percentage change in price of a product (P).
+            </p>
+
+            <h5>AO2 (4 MARKS)</h5>
+
+            <p>
+                Factors that determine the PES include the time required to produce the product. Products
+                that can be manufactured quickly tend to have a more elastic supply (PES > 1). For example,
+                a company producing electronic gadgets with capital intensive, automated production lines can
+                rapidly increase output in response to a rise in price, indicating a high PES. However, products
+                that take longer to manufacture, such as custom-built equipment, will have less elastic supply
+                due to the longer production time and less flexible technology (PES &lt 1).
+            </p>
+
+            <p>
+                Another factor is the existence of spare capacity for goods. It indicates the availability of
+                unused resources or factors of production that can be quickly mobilised to increase supply as
+                a response to an increase in price. When a firm has a high level of spare capacity, it can
+                ramp up production swiftly at relatively low cost in response to an increase in price, resulting
+                in a more price elastic supply. For example, a clothing manufacturer with underutilised machines
+                and workers can quickly increase production if the price of clothing rises. Conversely, if a
+                firm is operating near full capacity, any increase in production will likely require significant
+                investment in new machinery, hiring additional workers, or overtime pay. This makes it more
+                difficult and costly to respond to price changes, resulting in a less elastic supply.<br>               
+                [other: production time, factor mobility, perishability, comparative time period]
+            </p>
+
+            <h5>AO3 (2 MARKS)</h5>
+
+            <p>
+                To conclude, while these two factors are critical, it is essential to recognise that other
+                elements such as the ability to store products and the mobility of factors of production also
+                play a role in determining the PES of a manufactured product. Additionally, industry-specific
+                characteristics and external economic conditions can further influence how responsive supply is
+                to price changes.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Classification of Goods and Services</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter1/1.6.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Classification of Goods and Services</h2>
+
+            <h3>Unit 1.6 in Chapter 1: Basic economic ideas and resources</h3>
+
+            <div class="question-background">
+                <p>
+                    USING EXAMPLES, EXPLAIN WHY MERIT GOODS ARE SAID TO BE UNDERCONSUMED AND DEMERIT 
+                    GOODS ARE OVERCONSUMED.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 3, OCTOBER / NOVEMBER, 2022, QUESTION 2A, 8 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter1/1.6.m4a' %}"></audio>
+
+            <h4>Model Answer written by Bryan Yeo:</h4>
+
+            <h5>AO1 (2 MARKS)</h5>
+            <h5>Define and show knowledge/understanding of the difference between merit and demerit goods</h5>
+
+            <p>
+                Merit goods are goods that, when consumed, generate positive externalities and are goods that 
+                are perceived to be desirable and beneficial for consumers. Demerit goods are goods that generate 
+                negative externalities when consumed and are perceived to be undesirable and harmful for 
+                consumers, more so than they may realise themselves.
+            </p>
+
+            <h5>AO2 (3 MARKS)</h5>
+
+            <p>
+                Merit goods are said to be underconsumed due to information failure, a condition where parties 
+                have a lack of information when making economic decisions. As a result, consumers may not be 
+                fully aware of the positive externalities generated when consuming merit goods, underestimating 
+                their value and benefits, which causes them to be overpriced and underconsumed. For example, 
+                education is a merit good that is oftentimes underconsumed because consumers are unaware of the 
+                benefits associated with education (such as higher chances of employment) and, as a result, may 
+                not be willing to invest in education. The overpriced nature of education may also render it 
+                unaffordable for many, such as those on low incomes, which again contributes to its underconsumption.
+            </p>
+
+            <p>
+                Demerit goods are said to be overconsumed also because of information failure. Consumers are 
+                not fully aware of the dangers of consuming excessive amounts of demerit goods, which leads to 
+                them being underpriced and overconsumed as consumers overestimate the private benefits gained 
+                from consuming these goods. For example, demerit goods such as cigarettes are overconsumed due 
+                to consumers not being fully aware of their negative implications, such as the increased risk of 
+                contracting diseases such as cancer, and some consumers also continue to consume these goods even 
+                if they are aware of the consequences linked to the increased consumption of demerit goods because 
+                some of these goods are addictive and habit-forming, smoking cigarettes being a prime example of this.
+            </p>
+
+            <h5>AO3 (3 MARKS)</h5>
+            <h5>
+                No evaluation included in the mark scheme, but include anyways to be prudent
+            </h5>
+
+            <p>
+                While information failure undoubtedly plays a key role in causing the underconsumption and 
+                overconsumption of merit and demerit goods, respectively, there are also cases where consumers 
+                are aware of the benefits of consuming merit goods and the consequences of consuming demerit 
+                goods but may still continue to underconsume and overconsume merit and demerit goods, respectively, 
+                for a range of reasons, such as a low income, the addictive nature of demerit goods, overpriced 
+                merit goods, and underpriced demerit goods. Hence, government intervention is required to address 
+                these issues to ensure the optimal consumption of these goods, such as the introduction of taxes 
+                to regulate the consumption of demerit goods to lower their consumption and production and 
+                subsidies to lower the prices of merit goods to make them more affordable to consumers to increase 
+                their production and consumption. In conclusion, the prime reason for the underconsumption of 
+                merit goods and overconsumption of demerit goods can be ascribed to information failure, and to 
+                ensure the optimal consumption of merit goods, government intervention may be needed to address 
+                information failures and other market failures to maximise social welfare.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

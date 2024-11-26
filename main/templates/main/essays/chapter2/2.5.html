@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Consumer and Producer Surplus</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter2/2.5.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Consumer and Producer Surplus</h2>
+
+            <h3>Unit 2.5 in Chapter 2: The price system and the microeconomy</h3>
+
+            <div class="question-background">
+                <p>
+                    WITH THE HELP OF A DIAGRAM(S), EXPLAIN WHAT IS MEANT BY CONSUMER SURPLUS AND
+                    PRODUCER SURPLUS AND CONSIDER WHETHER A RISE IN THE PRICE OF A PRODUCT BECAUSE
+                    OF HIGHER COSTS OF PRODUCTION IS LIKELY TO ALWAYS REDUCE THE CONSUMER SURPLUS.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 2, MAY / JUNE, 2023, QUESTION 2A, 8 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter2/2.5.m4a' %}"></audio>
+
+            <h4>Model Answer written by Choo Pei Qi:</h4>
+
+            <h5>AO1 (3 MARKS)</h5>
+
+            <p>
+                Consumer surplus (CS) is the difference between the price a customer is willing
+                to pay for a good or service and its market price. It is represented as the
+                area under the demand curve, above the equilibrium price. Producer surplus (PS)
+                is the difference between the price a supplier is willing to accept and what is
+                actually paid. It is represented as the area above the supply curve, below the
+                equilibrium price.
+            </p>
+
+            <img src="{% static 'main/essay_images/chapter2/2.5.1.png' %}" class="image1">
+
+            <h5>AO2 (3 MARKS)</h5>
+
+            <p>
+                An increase in production costs shifts the supply curve leftward (SS1→SS2),
+                leading to a new equilibrium with a higher price (P1→P2) and lower quantity
+                (Q1→Q2), as seen in Diagrams 1 and 2. However, the extent of the decrease in
+                consumer surplus differs between the two. When demand is inelastic, the reduction
+                in consumer surplus is smaller, as seen in Diagram 1, because consumers are less
+                responsive to price changes, leading to a minor decrease in the quantity demanded.
+                Consumers continue to purchase goods like necessities despite higher prices.
+                However, when demand is elastic, as shown in diagram 2, there is a significant
+                reduction in consumer surplus because consumers are highly responsive to price
+                changes, leading to a substantial decrease in quantity demanded. This is normally
+                the case for luxury goods, which take up a large portion of income.
+            </p>
+
+            <img src="{% static 'main/essay_images/chapter2/2.5.2.png' %}" class="image2">
+
+            <h5>AO3 (2 MARKS)</h5>
+
+            <p>
+                To conclude, a rise in the price of a product due to higher production costs
+                leads to a reduction in consumer surplus. However, the extent of this reduction
+                varies depending on the elasticity of demand. For elastic goods, consumer surplus
+                decreases significantly, while for inelastic goods, the decrease is comparatively minor.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

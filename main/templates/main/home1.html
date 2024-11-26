@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'main/home1.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Mewconomics</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+            <p>MEWCONOMICS PRODUCTION</p>
+        </div>
+
+        <h1>Mewconomics</h1>
+        
+        <h2>BROUGHT TO YOU BY: MEWCONOMICS TEAM</h2>
+
+        <div class="buttons">
+            <li><a href="#">NEWS</a></li>
+            <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <h3>About us</h3>
+
+            <h4>for students, by students</h4>
+
+            <p>The Mewconomics website is a student-driven website designed to support Lower Sixth students 
+                in their Economics studies. Over the course of six months, a dedicated team of Upper Sixth 
+                students wrote original essays for every subtopic in the AS-level syllabus. These essays were 
+                meticulously reviewed and edited to ensure clarity and accuracy.
+            </p>
+
+            <p>
+                The website was created with the goal of simplifying complex economic subtopics into accessible, 
+                well-organized content. Each essay is structured in the style of an AS Economics essay, incorporating 
+                real-life examples, clear definitions and explanations on various economic concepts and easy-to-follow 
+                audio explanations. Each section is also divided into A01, A02 and A03 to illustrate how marks are 
+                divided and allocated for each section.
+            </p>
+                
+            <p>
+                Many thanks goes to Ms. Shir Li for proposing the idea of launching this website and to all the U6 
+                Computer Science and Economics students that were involved in the development of this website! The students 
+                involved in the development of the website and their respective roles are shown in the picture below.<br>
+            </p>
+                
+            <img src="{% static 'main/home_images/new-group-image.jpg' %}">
+
+            <p>
+                (Do note that the essays for the macroeconomic subtopics will be released later on, possibly in late January 
+                or early February and additional out of syllabus content will be posted under the ‘Extra News’ section, so do 
+                stay tuned for additional content in the future)
+            </p>
+
+            <p>
+                We hope you find the contents of this website useful. If you have any questions or suggestions on how the 
+                website could be improved, please do not hesitate to contact us through the email addresses provided below:
+                mewconomics@gmail.com, or google chat Bryan Yeo (IMR U6 and project manager of Mewconomics). Good luck with 
+                your AS exams and trials!
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <h3>Contact & Socials</h3>
+
+        <div class="social-media-buttons">
+            <li><a href="mailto:mewconomics@gmail.com" class="app-button gmail">EMAIL</a></li>
+            <li><a href="#" class="app-button instagram">INSTAGRAM</a></li>
+            <li><a href="#" class="app-button linkedin">LINKEDIN</a></li>
+            <li><a href="#" class="app-button facebook">FACEBOOK</a></li>
+            <li><a href="#" class="app-button x">X</a></li>
+        </div>
+    </footer>
+</body>
+</html>

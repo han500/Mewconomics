@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Factors of Production</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter1/1.3.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Factors of Production</h2>
+
+            <h3>Unit 1.3 in Chapter 1: Basic economic ideas and resources</h3>
+
+            <div class="question-background">
+                <p>
+                    OUTLINE THE FUNCTIONS OF FACTOR ENTERPRISE IN A MODERN ECONOMY AND EXPLAIN HOW 
+                    ENTERPRISE RESPONDS TO A RISE IN DEMAND FOR A GOOD.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 1, MAY / JUNE, 2016, QUESTION 3A, 8 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter1/1.3.m4a' %}"></audio>
+
+            <h4>Model Answer written by Arissa Hani:</h4>
+
+            <h5>AO1 (2 MARKS)</h5>
+            <h5>Knowledge and Understanding of Organisation + Risk-Taking</h5>
+
+            <p>
+                A modern economy allows market forces such as supply and demand to guide resource 
+                allocation in society. Thus, enterprises have the freedom to allocate resources in 
+                firms to produce goods and services. An entrepreneur is someone who is always willing 
+                to take risks in combining all aspects of production to produce high-quality goods 
+                and services at the lowest possible cost in order to maximise profit.
+            </p>
+
+            <h5>AO2 (3 MARKS)</h5>
+            <h5>Explains profit + enterprise in market economy</h5>
+
+            <p>
+                Therefore, in a free market economy, enterprises will pursue a low-cost method of 
+                production, such as adapting capital intensive methods like the use of machinery, 
+                cutting down on the cost of wages. Profit is seen as an incentive for entrepreneurs who 
+                invest in the three other factors of production (land, labour and capital), as they can 
+                use the profit to improve and increase the use of technological innovation. Hence, 
+                streamlining the efficiency and productivity of the production of goods and services.
+            </p>
+
+            <h5>AO3 (3 MARKS)</h5>
+            <h5>Analysis application showing how enterprise responds to an increase in demand</h5>
+            
+            <p>
+                As we all know, in a modern economy, competition between firms is very high as they 
+                compete to attract consumer spending to purchase their respective products. Therefore, 
+                they respond quickly to the price mechanism of a free economy, specifically the law of 
+                demand for goods. The law of demand states that as the price of a good decreases, the 
+                quantity demanded of a good will increase. Therefore, enterprises will respond to increased 
+                demand by increasing methods of production of goods so that it is more efficient to produce 
+                a high amount of goods to meet increasing demand from consumers. Moreover, this acts as a 
+                sign to entrepreneurs to redirect resources and three factors of production to produce a 
+                specific good, as it is the best way to maximise profit and avoid waste.
+            </p>
+
+            <p>
+                Not to mention, entrepreneurs will strategise how to increase production of goods and 
+                services by hiring more labour-intensive workers. As a result, the country's unemployment 
+                rate will rise, raising its living standards.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

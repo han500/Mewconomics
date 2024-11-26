@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Essays</title>
+    <link rel="stylesheet" href="{% static 'main/essays_home.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}" class="back-to-home">BACK TO HOME</a>
+            </div>
+            <h1>Mewconomics</h1>
+            <div class="buttons">
+                <a href="#" class="button news">NEWS</a>
+                <a href="#" class="button essays">ESSAYS</a>
+            </div>
+        </div>   
+    </div>
+    <div class="essay-contents">
+        <div class="topic-headers">
+            <div class="title">Micro</div>
+            <div class="title">Macro</div>
+        </div>
+        
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>Unit 1 • Basic economic ideas and resources</h2>
+                <ul>
+                    <li><a href="{% url 'main:essay' 'chapter1' '1.1' %}">1.1 Scarcity, choice and opportunity cost</a></li>
+                    <li>1.2 Economic methodology</li>
+                    <li><a href="{% url 'main:essay' 'chapter1' '1.3' %}">1.3 Factors of production</a></li>
+                    <li><a href="{% url 'main:essay' 'chapter1' '1.4' %}">1.4 Resource allocation in different economic systems</a></li>
+                    <li><a href="{% url 'main:essay' 'chapter1' '1.5' %}">1.5 Production possibility curves</a></li>
+                    <li><a href="{% url 'main:essay' 'chapter1' '1.6' %}">1.6 Classification of goods and services</a></li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h2>Unit 4 • The Macroeconomy</h2>
+                <ul>
+                    <li>4.1 National income statistics</li>
+                    <li>4.2 Introduction to the circular flow of income</li>
+                    <li>4.3 Aggregate Demand and Aggregate Supply analysis</li>
+                    <li>4.4 Economic growth</li>
+                    <li>4.5 Unemployment</li>
+                    <li>4.6 Price stability</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h2>Unit 2 • The price system and the microeconomy</h2>
+                <ul>
+                    <li><a href="{% url 'main:essay' 'chapter2' '2.1' %}">2.1 Demand and supply curves</a></li>
+                    <li><a href="{% url 'main:essay' 'chapter2' '2.2' %}">2.2 Price elasticity, income elasticity and cross elasticity of demand</a></li>
+                    <li><a href="{% url 'main:essay' 'chapter2' '2.3' %}">2.3 Price elasticity of supply</a></li>
+                    <li><a href="{% url 'main:essay' 'chapter2' '2.4' %}">2.4 The interaction of demand and supply</a></li>
+                    <li><a href="{% url 'main:essay' 'chapter2' '2.5' %}">2.5 Consumer and producer surplus</a></li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h2>Unit 5 • Government macroeconomic intervention</h2>
+                <ul>
+                    <li>5.1 Government macroeconomic policy objectives</li>
+                    <li>5.2 Fiscal policy</li>
+                    <li>5.3 Monetary policy</li>
+                    <li>5.4 Supply-side policy</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h2>Unit 3 • Government microeconomic intervention</h2>
+                <ul>
+                    <li><a href="{% url 'main:essay' 'chapter3' '3.1' %}">3.1 Reasons for government intervention in markets</a></li>
+                    <li><a href="{% url 'main:essay' 'chapter3' '3.2' %}">3.2 Methods and effects of government intervention in markets</a></li>
+                    <li><a href="{% url 'main:essay' 'chapter3' '3.3' %}">3.3 Addressing income and wealth inequality</a></li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h2>Unit 6 • International economic issues</h2>
+                <ul>
+                    <li>6.1 The reasons for international trade</li>
+                    <li>6.2 Protectionism</li>
+                    <li>6.3 Current account of the balance of ​payments</li>
+                    <li>6.4 Exchange rates</li>
+                    <li>6.5 Policies to correct imbalances in the ​current account of the balance of ​payments</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+    </footer>
+</body>
+</html>

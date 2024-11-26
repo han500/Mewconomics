@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Methods and Effects of Government Intervention in Markets</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter3/chapter3.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Methods and Effects of Government Intervention in Markets</h2>
+
+            <h3>Unit 3.2 in Chapter 3: Government microeconomic intervention</h3>
+
+            <div class="question-background">
+                <p>
+                    ASSESS WHETHER BUS AND LOCAL RAIL SYSTEMS IN CITIES SHOULD RECEIVE SUBSTANTIAL
+                    SUBSIDIES FROM GOVERNMENTS.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 3, OCTOBER / NOVEMBER, 2023, QUESTION 3B, 12 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter3/3.3.m4a' %}"></audio>
+
+            <h4>Model Answer written by Thura:</h4>
+
+            <h5>AO1 (4 MARKS)</h5>
+
+            <p>
+                A subsidy can be defined as support from the government either in financial or
+                non-financial forms. Usually, a subsidy is given to increase the consumption or 
+                production of certain goods and services.
+            </p>
+
+            <h5>AO2 (4 MARKS)</h5>
+
+            <p>
+                A subsidy to bus and local rail systems in cities can be perceived as a merit good, 
+                as they help low-income families in terms of lower transportation costs, thereby 
+                allowing them to spend more on other necessities. Secondly, this can reduce road 
+                congestion and traffic, thereby improving labour mobility. Thirdly, subsidies to railway 
+                firms will allow citizens to switch from private cars, which are considered demerit goods 
+                exacerbating air pollution, to public transport, which is far more sustainable and does 
+                not contribute to air pollution. Therefore, governments should provide subsidies to bus 
+                and local rail systems.
+            </p>
+
+            <p>
+                However, there is an opportunity cost to providing subsidies. The provision of these 
+                subsidies means that governments have given up the opportunity to improve other important 
+                facilities such as education, healthcare, infrastructure, etc. Secondly, if the demand for 
+                bus and rail tickets are relatively price inelastic, then providing subsidies may not necessarily 
+                offer the aforementioned benefits. Likewise, during emergencies or if citizens prefer private 
+                cars to public transport for convenience/privacy reasons, people might not use public transport 
+                despite lower ticket prices due to subsidies.
+            </p>
+
+            <h5>AO3 (4 MARKS)</h5>
+
+            <p>
+                Therefore, government subsidies to bus and local rail systems can have both advantages and 
+                disadvantages. However, the benefits of providing subsidies to bus and local rail systems 
+                generally outweigh its downsides. And the degree of benefits may depend on the transportation 
+                preferences of the citizens of a particular city, and how much a government is willing to invest 
+                in public transport.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

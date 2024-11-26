@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Demand and Supply Curves</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter2/2.1.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Demand and Supply Curves</h2>
+
+            <h3>Unit 2.1 in Chapter 2: The price system and the microeconomy</h3>
+
+            <div class="question-background">
+                <p>
+                    WITH THE HELP OF A DIAGRAM, EXPLAIN WHAT COULD CAUSE AN INCREASE IN DEMAND
+                    FOR A PRODUCT AND CONSIDER WHETHER THE IMPACT OF AN INCREASE IN DEMAND ON
+                    THE PRICE OF THE PRODUCT WILL BE THE SAME IN THE SHORT RUN AND THE LONG RUN.
+                </p>
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 1, OCTOBER / NOVEMBER, 2023, QUESTION 2A, 8 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter2/2.1.m4a' %}"></audio>
+
+            <h4>Model Answer written by Choo Pei Qi :</h4>
+
+            <h5>AO1 (3 MARKS)</h5>
+
+            <p>
+                An accurate demand and supply diagram with correctly labelled axes (1), correctly labelled 
+                shift of the demand curve to the right (1) with equilibrium positions in terms of both price 
+                and quantity clearly shown or a movement from E1 to E2 (1).
+            </p>
+
+            <img src="{% static 'main/essay_images/chapter2/2.1.png' %}" class="image">
+
+            <h5>AO2 (3 MARKS)</h5>
+
+            <p>
+                As shown in the short-run and long-run diagram, as demand increases (DD1→DD2), the price 
+                increases (P1→P2) along with the quantity traded (Q1→Q2), hence a movement along the 
+                supply curve (E1→E2). An increase in demand (DD1→DD2) for a product can be caused by 
+                several factors.
+            </p>
+
+            <p>
+                For one, the increase in income of consumers. When consumers' income rises, they have 
+                more disposable income to spend, which increases the demand for normal goods. For 
+                example, with higher salaries, consumers are able to buy more clothes or electronics, hence 
+                increasing the demand for the respective products.
+            </p>
+
+            <p>
+                Another factor for increase in demand is the increase in price of a substitute good. 
+                Consumers will switch to the product in question, increasing its demand. For example, if the 
+                price of coffee increases significantly, consumers will switch to tea as an alternative.
+            </p>
+
+            <p>
+                Changing tastes and preferences can also have a significant effect on demand for products. 
+                Persuasive advertising is designed to cause change in taste and preferences which can 
+                cause an increase in demand. If a health study claims moisturiser is good for skincare, the 
+                demand for it will increase.
+            </p>
+
+            <h5>AO3 (3 MARKS)</h5>
+
+            <p>
+                Despite that, the extent of increase in price differs between short-run and long-run.
+            </p>
+
+            <p>
+                In the short run, the supply of a product is relatively inelastic because producers cannot 
+                quickly change the quantity produced. A sudden increase in demand will typically lead to a 
+                higher price as the immediate supply cannot meet the new level of demand. This is due to 
+                factors like fixed capacity, production constraints and time leafs in increasing production.
+            </p>
+
+            <p>
+                Nevertheless, in the long run, supply is more elastic as producers have more time to adjust 
+                their production levels. They can invest in new technologies, expand their facilities or 
+                employ more labour. Hence, the price increase will not be as pronounced as in the short run 
+                because the supply can increase to meet the higher demand. The exact impact on price in
+                the long run is dependent on the nature of the industry, ability to scale production along 
+                with the availability and mobility of factors of production.
+            </p>
+
+            <p>
+                To conclude, an increase in demand usually leads to higher prices in both the short and long 
+                run. However, the extent of the increase in price relies on the price elasticity of supply.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

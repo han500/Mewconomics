@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Scarcity, Choice, and Opportunity Cost</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter1/1.1.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Scarcity, Choice, and Opportunity Cost</h2>
+
+            <h3>Unit 1.1 in Chapter 1: Basic economic ideas and resources</h3>
+
+            <div class="question-background">
+                <p>
+                    SHOW HOW A PRODUCTION POSSIBILITY CURVE CAN BE USED TO EXPLAIN SCARCITY, CHOICE, 
+                    AND OPPORTUNITY COST.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 2, FEBRUARY / MARCH, 2019, QUESTION 2A, 8 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter1/1.1.m4a' %}"></audio>
+
+
+            <h4>Model Answer written by Bryan Yeo:</h4>
+
+            <h5>AO1 (4 MARKS)</h5>
+            <h5>Introduce the PPC</h5>
+
+            <p>
+                A production possibility curve (PPC) is a graph that shows the maximum possible 
+                combinations of two goods that can be produced in an economy when all of its 
+                resources are fully utilised, given that its state of technology is fixed. It can 
+                be used as an indicator of scarcity. It can also be used to indicate choice and 
+                opportunity cost as an economy moves along the PPC with different combinations of 
+                goods and services chosen.
+            </p>
+
+            <img src="{% static 'main/essay_images/chapter1/1.1.png' %}" class="image">
+
+            <h5>AO2 (4 MARKS)</h5>
+            <h5>Using the PPC to explain scarcity [2], choice [2] and opportunity cost [2]</h5>
+
+            <p>
+                <u>Scarcity</u> is the central economic problem, where there are not enough resources to 
+                satisfy the needs and wants of all. In a PPC, this is illustrated by point C, a 
+                point of production that is unattainable due to the limited amount of resources an 
+                economy has. Opportunity cost is the next best alternative forgone, and using the PPC 
+                diagram above, we can see that its concave-like shape is indicative of the increasing 
+                opportunity costs incurred along the curve when shifting more resources to produce 
+                more of another good, as resources used to produce one good may not be especially suitable 
+                to produce another good, which causes opportunity cost to increase when producing more 
+                of another good. In this case, the <u>opportunity</u> cost of increasing production of Good X 
+                from Q2 to Q3 is Q0-Q1 units of Good Y, indicated by a movement along the PPC from point 
+                A to point B. Last but not least, <u>choice</u> is made necessary due to scarcity and can be 
+                shown on the PPC through a movement along the PPC. When an economy decides to produce 
+                more of a good, it must sacrifice production of a few units of another good. For example, 
+                the movement along the PPC from point A to B shows that although more of Good X is produced, 
+                units of Good Y are sacrificed (less units of Good B are produced) to enable this.
+            </p>
+
+            <h5>AO3 (2 MARKS)</h5>
+
+            <p>
+                Although the PPC serves as an effective tool to illustrate the concepts of scarcity, choice, 
+                and opportunity cost, it rests on several key assumptions that are unrealistic. Firstly, it 
+                only measures the relationship between two goods, which oversimplifies complex economies 
+                where multiple goods and services are sold. It also does not take into account external factors 
+                such as market imperfections and changes in demand, which may drastically affect the opportunity 
+                costs of a good and the amount of goods that can be produced within an economy. It also assumes 
+                that technological states remain static, which is often not the case, and technological 
+                advancements in the long run may alter the production possibilities of an economy, again 
+                changing the opportunity costs of producing a good and choices made due to the higher number 
+                of goods that can be produced.
+            </p>
+
+            <p>
+                In conclusion, scarcity can be illustrated on the PPC by drawing a point outside its frontier; 
+                opportunity cost and choice can be illustrated by showing a movement along the curve, showing 
+                that in order for more units of a good to be produced, units of another good must be given up 
+                for this to happen. And although PPC serves as a simple and effective visual aid to illustrate 
+                unattainable points and trade-offs along the curve, the key assumptions it rests on are often 
+                not applicable in the real world, which may affect the reliability of a PPC in showing opportunity 
+                cost and production possibilities.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

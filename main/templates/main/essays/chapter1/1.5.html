@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Production Possibility Curve</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter1/1.3.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Production Possibility Curve</h2>
+
+            <h3>Unit 1.5 in Chapter 1: Basic economic ideas and resources</h3>
+
+            <div class="question-background">
+                <p>
+                    DISCUSS WHETHER AN OUTWARD SHIFT IN AN ECONOMY'S PPC CURVE IS MORE LIKELY TO OCCUR 
+                    IN A FREE MARKET ECONOMY OR CENTRALLY PLANNED ECONOMY
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 3, OCTOBER / NOVEMBER, 2015, QUESTION 2B, 12 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter1/1.5.m4a' %}"></audio>
+
+            <h4>Model Answer written by Arissa Hani:</h4>
+
+            <h5>AO1 (4 MARKS)</h5>
+
+            <p>
+                The Production Possibilty Curve (PPC) is a curve that shows the maximum potential output 
+                of one good given the output of all other goods in an economy at a given point in time. 
+                An outward shift of PPC means an increase in productive capacity. For instance, economic 
+                growth will make the PPC curve shift outward.
+            </p>
+
+            <h5>AO2 (4 MARKS)</h5>
+
+            <p>
+                A free market economy is an economy that uses the laws of price mechanism and efficient 
+                allocation of resources to increase output. Not to mention, the economy is efficient through 
+                competition and strong incentives for enterprises to innovate and be creative in producing 
+                goods and services. Conversely, a centrally planned economy is an economy where the allocation 
+                of resources is decided by the government; there is also no competition among firms. As a 
+                result of this, their production of standardised goods is low in quality, due to a lack of 
+                incentive among firms to improve their goods to compete against each other.
+            </p>
+
+            <h5>AO3 (4 MARKS)</h5>
+
+            <p>
+                In a market economy, the allocation of resources is more efficient, and no wastage occurs. 
+                Firms also respond quickly to price mechanisms when supply and demand change, resulting in 
+                a competitive environment that encourages market firms to produce the greatest number of 
+                high-quality products with the resources they have available to meet demand. However, the 
+                market economy may not have sufficient funds for RnD and major technological advancement as 
+                private sectors are more limited in resources and often do not consider the benefit for the 
+                nation as their aim is to maximise profit. Meanwhile, centrally planned economies may not be 
+                as effective in their resource allocation because these types of economies are too complex, with 
+                no similar types of goods and services caused by no competition between firms. Moreover, the 
+                conditions of markets change all the time, so the absence of a quick feedback system leads to 
+                wastage and shortages. However, central planning always emphasises their aim to maximise welfare 
+                for the nation, so the supply of public goods will always be sufficient for consumption. Therefore, 
+                central planning may be more likely to shift PPC outward, considering the government is equal in 
+                distributing goods and services to the nation.
+            </p>
+
+            <p>
+                In conclusion, it is difficult to say which is better at shifting PPC outwards. The market economy 
+                is efficient, but it also has a lot of market failures, such as underproduction of merit goods. 
+                But all things said, the market economy does prove to be a better performer in this area compared 
+                to the central planning economy.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

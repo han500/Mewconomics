@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Price Elasticity, Income Elasticity and Cross Elasticity of Demand</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter2/base_essay.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Price Elasticity, Income Elasticity and Cross Elasticity of Demand</h2>
+
+            <h3>Unit 2.2 in Chapter 2: The price system and the microeconomy</h3>
+
+            <div class="question-background">
+                <p>
+                    ASSESS WHETHER PRICE ELASTICITY OF DEMAND (PED) OR INCOME ELASTICITY OF
+                    DEMAND (YED) IS LIKELY TO BE OF GREATER IMPORTANCE TO A FIRM PRODUCING CARS.
+                </p>
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 1, OCTOBER / NOVEMBER, 2023, QUESTION 2B, 12 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter2/2.2.m4a' %}"></audio>
+
+            <h4>Model Answer written by Choo Pei Qi:</h4>
+
+            <h5>AO1 (2 MARKS)</h5>
+
+            <p>
+                Price elasticity of demand (PED) is a measure of responsiveness of quantity demanded to changes
+                in price of the product. It is the ratio of percentage change in quantity demanded to percentage
+                change of price. On the other hand, income elasticity of demand (YED) measures the responsiveness
+                of quantity demanded of a product to a change in consumer income. It is the ratio of percentage
+                change in quantity demanded to percentage change in income.
+            </p>
+
+            <h5>AO2 (6 MARKS)</h5>
+
+            <p>
+                PED is useful for the firm for pricing strategies. If the demand for cars is price elastic
+                (magnitude of PED>1), a small change in price leads to a proportionately larger change in
+                quantity demanded. This implies that lowering prices can significantly boost sales volume which
+                can be beneficial during promotional campaigns or in highly competitive markets. Conversely, if
+                demand is price inelastic (magnitude of PED&lt1), changes in prices will not significantly affect
+                sales volume. This allows the firm to increase price to boost total revenue without losing many
+                customers. Understanding PED helps in setting optimal pricing strategies to maximise revenue. For
+                example, luxury car brands often face inelastic demand, allowing them to maintain high prices and
+                high profit margins.
+            </p>
+
+            <p>
+                YED indicates how demand changes with economic conditions. For cars, YED is typically positive and
+                greater than one (income elastic), especially for luxury cars. This means that demand for cars
+                increases at a proportionately larger rate than an increase in income. Understanding YED helps
+                firms in product planning and diversification. For instance, during economic growth, firms can
+                introduce more high-end models, while in recessionary periods, they could focus on more affordable,
+                fuel-efficient models.
+            </p>
+
+            <h5>AO3 (4 MARKS)</h5>
+
+            <p>
+                However, the extent to which both may be useful in reality depends on the accuracy of the estimate
+                of PED and YED. It can be difficult for firms to obtain accurate data and therefore obtain accurate
+                PED and YED estimates. It could be argued that PED values are more useful because it allows the
+                firms to make proactive decisions regarding their pricing strategies. However, a firm will need to
+                take into account the availability of substitutes, the amount spent on the product and the time
+                period under consideration. On the other hand, YED will be helpful in giving a firm an indication of
+                the extent to which a change in income may affect spending on cars. However, a firm will need to
+                account for whether a car is seen as a normal or inferior good, the proportion of income spent on the
+                car and the economic environment.
+            </p>
+
+            <p>
+                To conclude, both PED and YED are vital for a firm producing cars in theory but their relative
+                importance can vary based on specific market conditions and strategic objectives. Firms must balance
+                their focus on both elasticities to optimise pricing and market strategies effectively.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

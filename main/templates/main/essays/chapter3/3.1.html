@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Reasons for Government Intervention in Markets</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter3/chapter3.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Reasons for Government Intervention in Markets</h2>
+
+            <h3>Unit 3.1 in Chapter 3: Government microeconomic intervention</h3>
+
+            <div class="question-background">
+                <p>
+                    VERY HIGH CONSUMPTION OF CHOCOLATE CAN LEAD TO HEALTH PROBLEMS SUCH AS OBESITY
+                    AND DIABETES, ESPECIALLY AMONGST YOUNG CHILDREN IN DEVELOPED ECONOMIES. DISCUSS
+                    WHAT IS LIKELY TO BE THE MOST EFFECTIVE POLICY TO REDUCE THESE PROBLEMS.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 3, OCTOBER / NOVEMBER, 2019, QUESTION 2B, 12 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter3/3.1.m4a' %}"></audio>
+
+            <h4>Model Answer written by Thura:</h4>
+
+            <p>
+                As high chocolate consumption is not ideal for young children, it is important
+                for the governments to intervene in the chocolate market to reduce overconsumption.
+            </p>
+
+            <h5>AO2 (4 MARKS)</h5>
+
+            <p>
+                Indirect taxation is one of the most suitable methods to reduce consumption. The
+                government can raise indirect taxes on chocolate, leading to higher sales prices
+                of chocolate. Thus, it will lower the demand. Likewise, the state can also reduce
+                the indirect taxes on the substitutes of chocolate, such as sugar-free sweets,
+                which will lower their prices, thereby switching the consumer demand to substitutes
+                instead of chocolate. Thus, indirect taxation is said to be an effective method to
+                reduce undesirable diseases like obesity and diabetes from overconsuming chocolates.
+            </p>
+
+            <p>
+                However, chocolate has an addictive nature. Thus, an increase in price due to indirect
+                prices will not substantially lower its consumption. The demand for chocolate may be
+                price inelastic, thus not reducing the health problems posed by chocolate consumption.
+                Moreover, the price of chocolate occupies a tiny portion of an average person's income.
+                Therefore, even if the price may be higher than usual, he/she will not be very responsive
+                to price, thereby having fewer effects on demand.
+            </p>
+
+            <h5>AO2 (4 MARKS)</h5>
+
+            <p>
+                Sometimes, chocolate overconsumption can be attributed to information failure (young
+                children may not understand the negative consequences of excessive consumption of
+                chocolates). To fill this information gap, the government can use the provision of
+                information techniques. This will allow young children to understand the health problems
+                of overeating chocolates. Thus, they'll avoid overconsuming it, thereby lowering the
+                health risk of obesity and diabetes.
+            </p>
+
+            <p>
+                However, information provision requires a heavy load of effort and funds by the government.
+                Thus, there will be opportunity costs. For example, the government won't be able to
+                provide more subsidies to healthcare services that can directly cure obesity and diabetes, 
+                or there will be less investment in education. Moreover, the effectiveness of information
+                provision cannot be measured. Therefore, it is impossible to assess whether the reduction 
+                in chocolate consumption is due to the government,s information provision or other factors
+                such as changing consumer preferences.
+            </p>
+
+            <h5>AO3 (4 MARKS)</h5>
+
+            <p>
+                Overall, both policies may be effective in reducing health problems such as obesity and
+                diabetes. While indirect taxes can influence chocolate price and demand, the information
+                provision can fill up the information gap, presumably a cause of overconsumption. To conclude,
+                instead of using one specific policy, it is always advisable for a government to apply a
+                combination of policies that can effectively lower the health problems caused by chocolate
+                consumption.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

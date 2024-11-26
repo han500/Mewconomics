@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>The Interaction of Supply and Demand</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter2/base_essay.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>The Interaction of Supply and Demand</h2>
+
+            <h3>Unit 2.4 in Chapter 2: The price system and the microeconomy</h3>
+
+            <div class="question-background">
+                <p>
+                    WITH THE HELP OF A DIAGRAM(S), EXPLAIN WHAT IS MEANT BY EQUILIBRIUM IN A MARKET,
+                    AND CONSIDER THE EXTENT TO WHICH THE EQUILIBRIUM PRICE AND EQUILIBRIUM QUANTITY
+                    ARE LIKELY TO CHANGE FOR A PRODUCT FOLLOWING AN INCREASE IN THE WAGES FOR
+                    LABOUR ACROSS THE WHOLE ECONOMY.
+                </p>
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 2, MAY / JUNE, 2023, QUESTION 3A, 8 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter2/2.4.m4a' %}"></audio>
+
+            <h4>Model Answer written by Choo Pei Qi:</h4>
+
+            <h5>AO1 (3 MARKS)</h5>
+
+            <p>
+                The equilibrium point is where the quantity demanded equals the quantity supplied and there
+                is no tendency to change in a market.
+            </p>
+
+            <img src="{% static 'main/essay_images/chapter2/2.4.png' %}" class="image">
+
+            <h5>AO2 (3 MARKS)</h5>
+
+            <p>
+                With an increase in wage costs, cost of production increases. Hence, the supply curve
+                shifts inwards (SS1→SS2) and the market equilibrium changes (E1→E2). The equilibrium price
+                increases (P1→ P2) while equilibrium quantity decreases (Q1→Q2).  However, the extent of the
+                change in equilibrium price and quantity is dependent on the price elasticity of supply. A
+                more elastic supply curve would result in smaller changes in equilibrium price and quantity
+                as shown in diagram 2 and vise versa as shown in diagram 1.
+            </p>
+
+            <h5>AO3 (2 MARKS)</h5>
+
+            <p>
+                To conclude, an increase in wages typically leads to a decrease in supply, causing the
+                equilibrium price to rise and the equilibrium quantity to fall. The extent of these changes
+                depend on the elasticity of supply.  
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Addressing Income and Wealth Inequality</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter3/3.3.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Addressing Income and Wealth Inequality</h2>
+
+            <h3>Unit 3.3 in Chapter 3: Government microeconomic intervention</h3>
+
+            <div class="question-background">
+                <p>
+                    A GOVERNMENT WISHES TO KEEP THE PRICE OF AN ESSENTIAL FOOD, SUCH AS RICE, AFFORDABLE 
+                    TO HELP LOW-INCOME HOUSEHOLDS. ASSESS WHETHER A POLICY OF FIXING THE MAXIMUM PRICE 
+                    FOR AN ESSENTIAL FOOD IS LIKELY TO BE MORE EFFECTIVE THAN A POLICY OF MAKING 
+                    TRANSFER PAYMENTS TO LOW-INCOME HOUSEHOLDS.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 2, MAY / JUNE, 2023, QUESTION 2B, 12 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter3/3.3.m4a' %}"></audio>
+
+            <h4>Model Answer written by Thura:</h4>
+
+            <h5>AO1 (4 MARKS)</h5>
+            <h5>Definitions and examples</h5>
+
+            <p>
+                Effective maximum price is when the government sets a price below the market price 
+                to allow for more consumption. Transfer payments mean the direct payments by the 
+                government to those targeted income groups, usually low-income groups. Examples of 
+                transfer payments may include unemployment benefits, pensions, etc. The government 
+                may intervene in either way to help low-income households satisfy their basic necessities.
+            </p>
+
+            <h5>AO2 (4 MARKS)</h5>
+            <h5>Must be a two-sided response. Here, AO2 is structured by: the advantages and disadvantages 
+                of max price and the advantages and disadvantages of transfer payments
+            </h5>
+
+            <p>
+                Effective maximum price, a price set below equilibrium price, will allow for the price of 
+                foods to be more affordable. Therefore, low-income earners, consuming them at a lower price, 
+                will have greater disposable income, thereby being able to buy other household necessities. 
+                Thus, their living standards will improve. Moreover, it incurs no direct costs to the government.  
+                Thus, the government can spend more of its budgets on improving education or supplying healthcare 
+                services, benefiting low-income groups. However, the maximum price on rice, for example, can 
+                cause a shortage in the market as more people can now afford to demand rice. Thus, it will 
+                lead to longer queues and allocative problems, thereby certain low-income earners might lose 
+                out. Furthermore, the maximum price policy may require additional government law enforcement to 
+                assure the policy is effectively benefiting people with low income and to prevent the formation 
+                of informal markets, thereby incurring extra costs to the government.
+            </p>
+
+            <p>
+                Thus, a government may choose to offer transfer payments instead. Transfer payments can be 
+                targeted at certain groups. Therefore, by providing unemployment benefits, for instance, the 
+                government can assist unemployed people in buying basic essentials such as rice, leading to a 
+                more equal society. Moreover, transfer payments provide flexibility in consumption, meaning 
+                low-income earners can use the government’s financial assistance for whatever essentials they 
+                need. Unlike the maximum price policy, which is effective only on certain goods, transfer 
+                payments can better help low-income earners by allowing them to allocate the funds based on 
+                their certain needs. However, transfer payments can be costly and have an opportunity cost. The 
+                government will have less budget to spend on education, infrastructure, or healthcare, which 
+                may benefit low-income groups more than transfer payments. Additionally, transfer payments may 
+                lower the incentives for low-income earners to work, thereby raising higher dependency on the 
+                government. Thus, the government might face higher risks and costs in the future from providing 
+                transfer payments.
+            </p>
+
+            <h5>AO3 (4 MARKS)</h5>
+            <h5>Evaluation</h5>
+
+            <p>
+                To conclude, if low-income earners are struggling to buy certain essential goods, then a maximum 
+                price policy might be applicable as it will directly influence the affordability of specific goods. 
+                However, if the government wants to help low-income earners in general or promote higher income 
+                equality, transfer payments might be more effective. Which method is more effective may depend on 
+                the specific needs of low-income groups in that particular economy, the financial capability of the 
+                government, and its objectives in the economy.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="mailto:mewconomics@gmail.com"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>
