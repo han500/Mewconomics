@@ -186,6 +186,11 @@ footer h3 {
         padding-inline: 8rem;
     }
 
+    section img {
+        width: 50rem;
+        height: 50rem;
+    }
+
     footer h3 {
         font-size: 5rem;
     }
