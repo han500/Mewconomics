@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Reasons for Government Intervention in Markets</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter4/chapter4.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Fiscal Policy</h2>
+
+            <h3>Unit 5.2 in Chapter 5: Government macroeconomic intervention</h3>
+
+            <div class="question-background">
+                <p>
+                    DISCUSS WHETHER SUPPLY-SIDE POLICY IS MORE LIKELY TO BE SUCCESSFUL
+                    THAN FISCAL POLICY WHEN AN ECONOMY IS FACED WITH INFLATION
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 2, MAY / JUNE, 2017, QUESTION __, 12 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter5/5.2.m4a' %}"></audio>
+
+            <h4>Model Answer written by Anuj:</h4>
+            
+            <h5>AO1 (2 MARKS)</h5>
+
+            <p>
+                A fiscal policy involves changes in government spending and taxation to influence aggregate demand 
+                in an economy. A supply-side policy refers to any government action taken to shift the LRAS to 
+                influence its productive potential. Inflation is a sustained increase in general price levels over 
+                a period of time.
+            </p>
+
+            <h5>AO2 (6 MARKS)</h5>
+
+            <p>
+                A contractionary fiscal policy aims to decrease aggregate demand (AD) so that price levels decrease as well.
+                 In this case, the aim of fiscal policy is to shift the demand curve to the left. The marginal rate of income 
+                 tax can be increased to reduce disposable income and reduce the incentive for consumption, decreasing AD.
+                  Another way is by increasing corporate tax, which is a tax on business profits. This decreases retained 
+                  profits and reduces the marginal propensity to invest, decreasing AD. Moreover, governments can also reduce 
+                  spending on infrastructure and public sector wages, significantly reducing AD due to a negative multiplier 
+                  effect whereby an initial decrease in spending (AD) will decrease incomes in the economy, facilitating further 
+                  rounds of saving.
+            </p>
+
+            <p>
+                On the other hand, supply-side policies aim to shift the LRAS curve outward, increasing real output in the long run. 
+                This can be done through investing in research and development. Through doing this, firms are able to produce higher-quality
+                goods at lower prices while simultaneously lowering the cost of production and making production processes more efficient. 
+                Furthermore, government investment in upskilling and education can help boost labour productivity, which further boosts the real 
+                output of an economy and shifts the LRAS curve outward. Through shifting the LRAS curve outwards, prices are reduced in the long run, 
+                and inflationary pressures are also reduced.
+            </p>
+
+            <h5>AO3 (4 MARKS)</h5>
+
+            <p>
+                To evaluate, it must be made clear that government macroeconomic intervention must be taken only if there is a high, unstable rate of inflation. 
+                A low, stable inflation rate is a macroeconomic objective. While inflation is a key macroeconomic objective, contractionary fiscal policies may 
+                cause a shock in the economy and widen income inequalities if regressive taxes are raised and spending on welfare is cut. Austerity policies could 
+                worsen long-term economic prospects because improvements in education and infrastructure can generate strong returns over time, tax revenue can be generated,
+                and productivity can be boosted, reducing inflation in the long run. Besides, the initial level of economic activity matters as well. If there is a large negative
+                output gap (a large level of spare capacity), then contractionary fiscal policies will be of little use because a decrease in AD will be more consequential for real
+                output than inflationary pressures. Thus, when there are low levels of spare capacity, there will be a much greater relief of pressure on the limited factors of production, 
+                leading to a much greater decrease in demand-pull inflation. Moreover, Laffer argued that by raising tax revenues, there will come a point where tax revenue goes down 
+                as tax rates increase because there is a disincentive for workers to work for higher incomes that will be taxed heavily. Tax evasion would be promoted, and there may be emigration,
+                which could worsen the economy instead of improving it
+            </p>
+
+            <p>
+                Regarding supply-side, the main issue is that they usually take long periods to take effect on productivity, which is useless if the inflationary pressure is urgent or short term. 
+                They are not guaranteed to work either because there is an unintended possible consequence of firms misusing the funds, where they may use them to pay greater dividends to shareholders 
+                instead of R&D. Controversial measures, such as reducing benefits, can harm key stakeholders. Arguably, the main evaluation is derived from the fact that inflationary pressures can either 
+                be demand- or supply-side. Fiscal policies cannot deal with cost-push inflation, whereas supply-side cannot deal with demand-pull inflation.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="#"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

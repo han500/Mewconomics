@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Reasons for Government Intervention in Markets</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter6/6.5.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Policies to Correct Imbalances in the Current Account of the Balance of Payments</h2>
+
+            <h3>Unit 6.3 in Chapter 6: International economic issues</h3>
+
+            <div class="question-background">
+                <p>
+                    DISCUSS WHETHER EXPENDITURE-REDUCING POLICIES ARE LIKELY TO REDUCE CURRENT ACCOUNT DEFICIT ON THE BALANCE OF PAYMENT WITH A 
+                    FLOATING EXCHANGE RATE.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE: CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 1, OCTOBER / NOVEMBER, 2021, QUESTION __, 12 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+
+            <h4>Model Answer written by Ethan Lam:</h4>
+            
+            <h5>AO1 (2 MARKS)</h5>
+
+            <p>
+                Expenditure reducing policies are done by the government with the aim to reduce overall spending in the economy and reduce 
+                imports via contractionary fiscal and monetary policies. A freely floating exchange rate occurs when the government allows 
+                the exchange rate to be determined purely by market forces and there is no attempt to ask the central bank to influence the 
+                external value of the exchange rate and thus expenditure reducing policy for correcting current account deficit may be effective 
+                since currency is flexible based on the supply and demand for the currency.
+
+            </p>
+
+            <h5>AO2 (6 MARKS)</h5>
+
+            <p>
+                Contractionary fiscal policy means that the government could mix taxes such as income tax, corporate tax and indirect
+                tax such as sales tax and VAT (Value-Added Tax). Governments can also reduce spending on infrastructure and unemployment
+                benefits, this influences people to have less purchasing power, thus spending on local goods and imports both fall. Hence,
+                aggregate demand (AD) and inflation both fall as well. Also, tax revenue for the government will rise and the government
+                budget will be in surplus. Direct taxes are quicker and easier to implement than indirect taxes. 
+            </p>
+
+            <p>
+                Contractionary monetary policies means government through Central Bank will increase interest rates and reduce money supply. 
+                High interest rate will encourage savings and increase cost of borrowing, reducing spending on imports. Central banks will also
+                restrict granting of loans to reduce money supply, which reduces local consumption, thus causing AD and inflation rates to fall. 
+                This causes exports to become cheaper, reducing the current account deficit.  
+            </p>
+
+            <p>
+                However, expenditure reducing policies will reduce AD and leads to a fall in National Income (GDP) of the local economy. Thus, 
+                expenditure switching policies may be used to correct current account deficit as it will not affect local demand and sales. 
+                For example, the government may opt to use protectionist policies such as tariffs, embargoes, exchange controls and quotas 
+                to reduce imports to increase local demand and reduce import demand, reducing current account deficit. However, other countries 
+                may retaliate and reduce imports from the country, thus export revenue may fall and current account deficit may not resolve. If 
+                there is inflation and current account deficit at the same time, expenditure reducing policies should be used to reduce AD, driving 
+                down demand-pull inflation.
+            </p>
+
+            <h5>AO3 (4 MARKS)</h5>
+
+            <p>
+                Still, if there is high preference for import (inelastic PED for imports) and low confidence in domestic goods, high tax rates and interest rates, 
+                low money supply and government spending are not likely to be effective. Similarly, if speculation and confidence for domestic currency is high, 
+                foreign investors will still purchase domestic currency and thus exchange rate will be high. This may cause the further appreciation of a currency 
+                and will lead to relatively expensive exports, and current account deficits may instead exacerbate as a result of this. 
+            </p>
+
+            <p>
+                Expenditure-reducing policies may also lead to deflation then recession and high unemployment if used for long periods of time. Expenditure-reducing 
+                policy may also take time to be effective. 
+            </p>
+
+            <p>
+                The J-curve effect can be used to explain the impacts on the current account on different time scales. Initially after a currency appreciation, the current 
+                account effects are not apparent immediately. This is because, in the short term, existing export contracts may not decrease the volume of exports significantly. 
+                Similarly, consumers and businesses may not immediately adjust their import behavior in response to lower prices. There may be a short-term deterioration but long-term 
+                improvement in the current account, because in the long run, exporters may negotiate new contracts and seek new markets, maintaining competitiveness.
+
+            </p>
+
+            <p>
+                In conclusion, expenditure-reducing policy may reduce the current account deficit for floating exchange rate economies, but should be accompanied with other policies
+                to remain effective in the long run.
+            </p>
+               
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="#"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

@@ -1,0 +1,22 @@
+@import url('../chapter4/4.6.css');
+
+article h4:nth-of-type(3) {
+    right: 10rem;
+}
+
+.image {
+    width: 8rem;
+    height: 8rem;
+}
+
+@media screen and (min-width: 768px) {
+    article h4:nth-of-type(3) {
+        right: 16rem;
+    }
+
+    .image {
+        margin-top: 1rem;
+        width: 13rem;
+        height: 13rem;
+    }
+}

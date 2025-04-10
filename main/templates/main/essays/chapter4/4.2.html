@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Reasons for Government Intervention in Markets</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter4/4.2.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Circular Flow of Income</h2>
+
+            <h3>Unit 4.2 in Chapter 4: The Macroeconomy</h3>
+
+            <div class="question-background">
+                <p>
+                    WITH THE HELP OF A CIRCULAR FLOW DIAGRAM, EXPLAIN HOW EQUILIBRIUM IS DETERMINED
+                    IN AN OPEN ECONOMY AND CONSIDERED WHETER A BUDGET DEFICIT OR A TRADE DEFICIT IS 
+                    MORE LIKELY TO CAUSE LASTING DISEQUILIBRIUM.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 3, MAY / JUNE, 2023, QUESTION __, 8 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter4/4.2.m4a' %}"></audio>
+
+            <h4>Model Answer written by Anuj:</h4>
+
+            <h5>AO1 (3 MARKS)</h5>
+
+            <img src="{% static 'main/essay_images/chapter4/4.2.png' %}" class="image">
+
+            <p>
+                An accurate diagram showing income flows between firms and households for reference.
+
+                The diagram should clearly indicate imports and exports (1); as well as government spending and taxation (1); between firms and households (1).
+            </p>
+
+            <h5>AO2 (3 MARKS)</h5>
+
+            <p>
+                Leakages are where money outflows in the form of savings, taxation and imports. Injections are money inflows in the form of investment, government spending and exports.
+                At the heart of the circular flow diagram are households and firms. Households provide factors of production (land, labour, capital, and entrepreneurship) to firms, which 
+                produce goods and services. In return, firms then pay households for their inputs in the form of wages, rent, interest, and profit respectively.
+            </p>
+
+            <p>
+                Equilibrium is achieved when the sum of injections equals the sum of leakages. If injections exceed leakages, the economy will grow, leading to increased output and income. 
+                Conversely, if leakages exceed injections, the economy will contract, leading to reduced output and income.
+            </p>
+
+            <h5>AO3 (2 MARKS)</h5>
+
+            <p>
+                A budget deficit occurs when government spending exceeds overall government revenue or taxation. 
+                This increases the total injections into the economy, potentially leading to economic growth if 
+                the spending stimulates demand and productivity. While both budget and trade deficits can cause 
+                disequilibrium, a trade deficit is more likely to cause lasting disequilibrium. This is because 
+                it represents a continual outflow of domestic income, weakening the economy’s capacity to 
+                generate wealth in the long run.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="#"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

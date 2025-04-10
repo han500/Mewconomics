@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Reasons for Government Intervention in Markets</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter4/chapter4.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Monetary Policy</h2>
+
+            <h3>Unit 5.3 in Chapter 5: Government macroeconomic intervention</h3>
+
+            <div class="question-background">
+                <p>
+                    DISCUSS THE LIKELY CONSEQUENCES FOR AN ECONOMY OF AN INCREASE IN THE MONEY SUPPLY.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 1, MAY / JUNE, 2018, QUESTION __, 12 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter5/5.3.m4a' %}"></audio>
+
+            <h4>Model Answer written by Anuj:</h4>
+
+            <h5>AO1 (2 MARKS)</h5>
+
+            <p>
+                Increasing the money supply is a form of government expansionary monetary policy, and it 
+                can be achieved in several ways. One way is open market operations, which involves the purchase 
+                of government bonds that inject money into the banking system, leading to an increase in lending 
+                capacity. Another way is quantitative easing, which involves the purchase of long-term securities 
+                to boost the money supply. Another common method is to lower the interest rate to lower the return 
+                on savings, encouraging borrowing and spending, leading to an increase in the money supply as credit 
+                creation expands.
+            </p>
+
+            <h5>AO2 (6 MARKS)</h5>
+
+            <p>
+                If the money supply exceeds the economy’s capacity to produce goods and services (AD exceeds AS), 
+                then there will be demand-pull inflation. With more money in circulation, consumers have higher 
+                purchasing power, and prices may rise as rising demand outstrips supply. There may also be cost-push 
+                inflation if firms face higher costs of production due to increased wages (if labour demands higher 
+                wages due to higher purchasing power) or prices of raw materials (if there is a shortage, then the 
+                cost to obtain raw materials rises). Firms may pass the higher costs onto consumers, leading to inflation
+                even without a rise in demand.
+            </p>
+
+            <p>
+                Moreover, when the money supply increases, it can lead to expectations of higher inflation rates in 
+                the future. This may erode the purchasing power of the currency, depreciating the currency. A weaker 
+                currency leads to imported inflation and can contribute to higher inflationary pressures.
+            </p>
+
+            <h5>AO3 (4 MARKS)</h5>
+
+            <p>
+                However, if the increase in money supply is matched by an increase in AS, the economy may be able to 
+                produce enough goods and services to meet the higher demand without significant inflation. For instance, 
+                increasing the money supply is accompanied by an improvement in labour productivity or productive capacity. 
+                At this equilibrium, there won’t be any bottlenecks in production.
+            </p>
+
+            <p>
+                Moreover, the consequences of an increase in money supply depend on the economic state. 
+                In a recession, there is a negative output gap and greater spare capacity to meet the rise 
+                in demand with a lower risk of inflation.
+            </p>
+
+            <p>
+                The magnitude of the money supply also matters. A small, controlled increase in the money supply
+                will mitigate the risk of inflationary pressures better, reducing the risk of runaway inflation 
+                (an uncontrollable increase in general price levels).
+            </p>
+
+            <p>
+                In conclusion, this monetary policy tool has several consequences for an economy. Depending on the 
+                economic condition and the size of the increase, the consequences may be positive but there is a risk 
+                of unmanageable negative consequences.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="#"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Reasons for Government Intervention in Markets</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter4/chapter4.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Aggregate Demand and Aggregate Supply Analysis</h2>
+
+            <h3>Unit 4.3 in Chapter 4: The Macroeconomy</h3>
+
+            <div class="question-background">
+                <p>
+                    DISCUSS THE CAUSES OF AN INCREASE IN AGGREGATE DEMAND. ASSESS WHETHER SUCH AN INCREASE
+                    WILL ALWAYS CAUSE INFLATION. USE DIAGRAMS TO SUPPORT YOUR ANSWER.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 1, OCTOBER / NOVEMBER, 2017, QUESTION __, 12 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+
+            <h4>Model Answer written by Anuj:</h4>
+
+            <h5>AO1 (2 MARKS)</h5>
+
+            <p>
+                Aggregate demand (AD) is the total demand for goods and services in an economy at a given 
+                price level, comprising consumption (C), investment (I), government spending (G), and net 
+                exports (X-M).
+            </p>
+
+            <h5>AO2 (6 MARKS)</h5>
+
+            <p>
+                An increase in AD can be caused by various factors:
+            </p>
+
+            <p>
+                Firstly, there could be an increase in consumption. This may occur due to lower interest rates 
+                which makes borrowing cheaper and saving less attractive, encouraging consumer spending, especially 
+                on durables such as cars. Consumption may also increase due to higher disposable incomes due to 
+                income tax cuts, for example.
+            </p>
+
+            <p>
+                Secondly, there could be an increase in investment, perhaps due to lower corporate taxes that 
+                encourage reinvestment of profits, increasing AD.
+            </p>
+
+            <p>
+                Additionally, governments may increase spending on infrastructure, education or healthcare which 
+                directly boost AD. For instance, building new roads creates jobs and raises overall demand in the 
+                economy.
+            </p>
+
+            <p>
+                Lastly, net exports may improve if there is a depreciation of the country’s currency which would 
+                make exports cheaper and more desirable, increasing AD.
+            </p>
+
+            <h5>AO3 (4 MARKS)</h5>
+
+            <p>
+                The impact of an increase in AD on inflation depends on the position of the economy relative to its 
+                productive capacity, represented by the aggregate supply (AS) curve.
+            </p>
+
+            <p>
+                In Keynesian economics, there may be inflation in the short run if the economy is operating at near 
+                full capacity. The upward-sloping section of the AS curve illustrates this, where higher demand pushes 
+                prices up. However, if there is sufficient spare capacity, an increase in AD may result in higher 
+                output without inflation. The horizontal section of the Keynesian AS curve represents this. However, 
+                according to classical economists, in the long run, the economy operates at full employment, and any 
+                increase in AD beyond this point leads to inflation without a rise in output. This is shown by the 
+                vertical LRAS curve.
+            </p>
+
+            <p>
+                Therefore, an increase in AD does not always cause inflation. The extent of inflation depends on 
+                factors such as the level of spare capacity, the responsiveness of AS, and whether supply-side policies 
+                accompany demand-side changes.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="#"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

@@ -2,7 +2,7 @@
 	font-family: 'Baskerville Normal';
 	font-style: normal;
 	font-weight: normal;
-	src: local('Baskerville Normal'), url(font/baskvl.woff) format(woff);
+	src: local('Baskerville Normal'), url("font/baskvl.d45976254f9e.woff") format(woff);
 }
 
 body {

@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Reasons for Government Intervention in Markets</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter4/chapter4.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Supply-side Policy</h2>
+
+            <h3>Unit 5.4 in Chapter 5: Government macroeconomic intervention</h3>
+
+            <div class="question-background">
+                <p>
+                    A GOVERNMENT EMBARKS ON A NEW SUPPLY-SIDE POLICY INVOLVING SUBSTANTIAL ADDITIONAL FUNDING
+                    FOR NEW ROAD SCHEMES AND FOR NEW TRAINING SCHEMES DESIGNED TO RAISE LABOUR PRODUCTIVITY. USE AN AD/AS DIAGRAM
+                    TO EXPLAIN THE EFFECTS OF THIS FUNDING ON THE LEVEL OF OUTPUT IN THE ECONOMY.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 3, OCTOBER / NOVEMBER, 2020, QUESTION __, 8 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+
+            <h4>Model Answer written by Anuj:</h4>
+
+            <h5>AO1 (2 MARKS)</h5>
+
+            <p>
+                For an accurate AD/AS diagram that shows national output in equilibrium
+            </p>
+
+            <p>
+                In an AD/AS diagram, the national output is initially in equilibrium at the point where the 
+                AD and AS curves intersect. Aggregate demand (AD) represents the total quantity of goods and 
+                services demanded at different price levels in an economy. Aggregate supply (AS) refers to the 
+                total quantity of goods and services that firms are willing and able to produce at different price 
+                levels.
+            </p>
+
+            <p>
+                In the diagram, the AD curve is downward-sloping, indicating an inverse relationship between price 
+                level and real GDP. The AS curve is upward-sloping in the short run. Equilibrium occurs at the point 
+                where AD intersects AS, indicating the level of output and price in the economy before any changes in 
+                government policy.
+            </p>
+
+            <h5>AO2 (3 MARKS)</h5>
+            <p>
+                For a clear understanding of aggregate demand using an accurate diagram to show that the AD curve will shift 
+                to the right because of the increase in government spending and that this will increase the level of national output.
+            </p>
+
+            <p>
+                The training schemes funded by the government are designed to improve labour productivity. Higher productivity allows 
+                firms to produce more output with the same level of input, effectively increasing the economy’s capacity to produce goods 
+                and services. This results in a rightward shift of the AS curve from AS1 to AS2 in the long run, reflecting an improvement 
+                in the productive potential of the economy.
+            </p>
+
+            <p>
+                In the diagram, the rightward shift of the AS curve increases national output further, 
+                from Y2 to Y3, while reducing or stabilizing the price level as production becomes more 
+                efficient (P2 to P3). The final effect is a higher level of output without inflationary pressure, 
+                as the economy can produce more efficiently.
+            </p>
+
+            <h5>AO3 (2 MARKS)</h5>
+
+            <p>
+                The initial impact of increased government spending shifts the AD curve to the right, raising national output in the short run. 
+                Over time, improved labour productivity shifts the AS curve to the right, further increasing output and stabilising the price level. 
+                Both aggregate demand and aggregate supply shifts contribute to an overall increase in national output. 
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="#"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Reasons for Government Intervention in Markets</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter4/chapter4.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="{% url 'main:home' %}">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="{% url 'main:essays' %}">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Protectionism</h2>
+
+            <h3>Unit 6.2 in Chapter 6: International economic issues</h3>
+
+            <div class="question-background">
+                <p>
+                    DISCUSS THE ARGUMENTS THAT ARE USED TO JUSTIFY PROTECTIONISM AND CONSIDER WHETHER THESE 
+                    ARGUMENTS CAN EVER BE JUSTIFIED.
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE: CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 2, MAY / JUNE, 2019, QUESTION __, 12 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+
+            <h4>Model Answer written by Anuj:</h4>
+            
+            <h5>AO1 (2 MARKS)</h5>
+
+            <p>
+                Protectionism is any barrier that restricts free trade to protect domestic producers from foreign 
+                competition. This involves interference with market forces or the relative prices of imports and 
+                exports.
+            </p>
+
+            <h5>AO2 (6 MARKS)</h5>
+
+            <p>
+                One justification for protectionism is to protect infant industries. These small industries do not have 
+                the economies of scale to compete with large foreign industries. Protectionism allows these small industries 
+                to grow over time and benefit from economies of scale to reduce the costs of production and compete with more 
+                established industries abroad.
+            </p>
+
+            <p>
+                Another justification is to protect against dumping which is the sale of a product in overseas markets at a price 
+                below the cost of production often due to heavy subsidies or minimum price schemes generating an excess supply. 
+                Dumped products are artificially more competitive than domestic products, leading to structural unemployment and 
+                political unrest.
+            </p>
+
+            <p>
+                Furthermore, protectionism is adopted to eliminate a current account deficit and promote economic growth. Imported goods 
+                are either more expensive or restricted, reducing import expenditure, which ceteris paribus improves the trade balance.
+            </p>
+
+            <h5>AO3 (4 MARKS)</h5>
+
+            <p>
+                While protecting infant industries is important for developing countries looking to diversify and reduce the risk of 
+                primary commodity over-specialisation, it may fail in the medium to long term because of a possible rise in complacency. 
+                This may reduce competitiveness.
+            </p>
+
+            <p>
+                Even though dumping is an important issue to deal with, it is very hard to prove because of incomplete information regarding 
+                the costs of production. The accused country may feel targeted and retaliate heavily leading to a tit-for-tat protectionism 
+                that benefits no one.
+            </p>
+
+            <p>
+                The biggest problem with using protectionism to close trade deficits is retaliation. This may be implemented much more strongly, 
+                reducing export revenues more so than the import expenditure saved, which would lead to a worsening of the trade deficit.
+            </p>
+
+            <p>
+                Of course, there are undeniable benefits of free trade as well. Greater specialisation increases world efficiency and businesses have 
+                the potential to access larger economies of scale. Greater market sizes also mean faster rates of GDP growth and technology transfers.
+            </p>
+
+            <p>
+                In conclusion, protectionism is valid in many scenarios. A thorough cost-benefit analysis of different protectionist methods should be done 
+                to weigh out the necessity for protectionist measures, considering the long-run.
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="#"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>

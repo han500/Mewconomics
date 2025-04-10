@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Reasons for Government Intervention in Markets</title>
+    <link rel="stylesheet" href="{% static 'main/essays/chapter3/chapter3.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <div class="logo">
+                <img src="{% static 'main/home_images/logo.png' %}" alt="mewconomics-logo">
+                <a href="#">BACK TO HOME</a>
+            </div>
+
+            <div class="buttons">
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">ESSAYS</a></li>    
+            </div>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Unemployment</h2>
+
+            <h3>Unit 4.5 in Chapter 4: The Macroeconomy</h3>
+
+            <div class="question-background">
+                <p>
+                    EXPLAIN HOW UNEMPLOYMENT AND INFLATION ARE MEASURED. 
+                </p>    
+            </div>
+
+            <div class="source-background">
+                <p>SOURCE:  CAIE, ECONOMICS, 9708, PAPER 2, VARIANT 3, OCTOBER / NOVEMBER, 2014, QUESTION __, 8 MARKS</p>
+            </div>
+
+            <div class="video">
+                <img src="{% static 'main/social_media_icons/youtube.svg' %}">
+                <a href="#">VIDEO REFERENCE LINK</a>
+            </div>
+
+            <h4>Podcast:</h4>
+            <audio controls src="{% static 'main/podcasts/chapter3/3.1.m4a' %}"></audio>
+
+            <h4>Model Answer written by Hilary:</h4>
+
+            <h5>AO1 (2 MARKS)</h5>
+
+            <p>
+                Unemployment is used to define the state of being jobless but actively seeking work. 
+                Inflation is the continuous rise in general price levels over a period of time. 
+            </p>
+
+            <h5>AO2 (4 MARKS)</h5>
+
+            <p>
+                Unemployment is measured primarily through the unemployment rate, this is the number of workers in an area 
+                or economy without a job and looking for work, divided by the total number of workers in the labour force. 
+                One measure of unemployment is the claimant count, which is based on the number of people claiming unemployment 
+                benefits. Another measure of unemployment is found in employment surveys, they provide a broader and more 
+                comprehensive measure of unemployment, which includes those not eligible for unemployment benefits.
+
+            </p>
+
+            <p>
+                Inflation is primarily measured by the Consumer Price Index (CPI), which measures the percentage change in the price 
+                of a basket of goods and services consumed by households in a given period of time. These goods and services include food, 
+                housing, clothing, healthcare, education, transportation, and so on. Besides this, the GDP Deflator method can be used as 
+                it measures the level of prices of all new, domestically produced goods and services in an economy. 
+
+            </p>
+
+            <h5>AO3 (2 MARKS)</h5>
+
+            <p>
+                silence.
+            </p>
+
+            <p>
+                
+            </p>
+        </article>
+
+        <h4 class="comment">Comments:</h4>
+
+        <form action="{% url 'main:essay' chapter subtopic %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="comment-background">
+            {% for comment in comment_list %}
+            <p>
+                <span class="content">{{ comment.content }}</span><br>
+                <span class="info">POSTED {{ comment.date }} BY {{ comment.author }}</span>
+            </p>
+            <br>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+		<a href="#"><img src="{% static 'main/social_media_icons/gmail.svg' %}" alt="Gmail"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/instagram.svg' %}" alt="Instagram"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/linkedin.svg' %}" alt="LinkedIn"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/facebook.svg' %}" alt="Facebook"></a>
+		<a href="#"><img src="{% static 'main/social_media_icons/x.svg' %}" alt="X"></a>
+	</footer>
+</body>
